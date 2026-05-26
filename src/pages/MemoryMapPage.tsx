@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { ArrowLeft, Share2 } from 'lucide-react'
 
@@ -8,55 +8,55 @@ interface MemoryMapPageProps {
 
 const memories = [
   {
-    date: '2025年1月15日',
-    title: '小时候在上海城隍庙的故事',
-    summary: '妈妈带我去城隍庙，买了南翔小笼包给我吃，那是我最美好的回忆。',
+    date: 'January 15, 2025',
+    title: 'Childhood Memories at the City God Temple in Shanghai',
+    summary: 'My mother took me to the City God Temple and bought me Nanxiang xiaolongbao. Those were my most beautiful memories.',
     emoji: '🏮',
-    emotion: '开心',
+    emotion: 'Happy',
   },
   {
-    date: '2025年1月12日',
-    title: '和老伴第一次见面的回忆',
-    summary: '那是在工厂的舞蹈会上，他穿着整洁的衣服，笑容很温暖。',
+    date: 'January 12, 2025',
+    title: 'First Meeting with My Husband',
+    summary: 'We met at a factory dance party. He was wearing neat clothes and had a warm smile.',
     emoji: '💕',
-    emotion: '感动',
+    emotion: 'Touched',
   },
   {
-    date: '2025年1月10日',
-    title: '教孙女包饺子的下午',
-    summary: '小雨学得很认真，虽然包得不太整齐，但我们一起笑了很久。',
+    date: 'January 10, 2025',
+    title: 'Teaching Granddaughter to Make Dumplings',
+    summary: 'Little Rain learned very carefully. Although her dumplings weren\'t perfectly shaped, we laughed together for a long time.',
     emoji: '🥟',
-    emotion: '开心',
+    emotion: 'Happy',
   },
   {
-    date: '2025年1月8日',
-    title: '年轻时在工厂工作的日子',
-    summary: '那时候我们都很年轻，每天都充满了希望和梦想。',
+    date: 'January 8, 2025',
+    title: 'Working Days at the Factory in My Youth',
+    summary: 'We were all young then, full of hope and dreams every day.',
     emoji: '🏭',
-    emotion: '怀念',
+    emotion: 'Nostalgic',
   },
   {
-    date: '2025年1月5日',
-    title: '最喜欢的一首老歌：《茉莉花》',
-    summary: '这首歌陪伴了我一生，每次听到都能想起青春年代。',
+    date: 'January 5, 2025',
+    title: 'My Favorite Old Song: Jasmine Flower',
+    summary: 'This song has accompanied me throughout my life. Every time I hear it, I remember my youth.',
     emoji: '🎵',
-    emotion: '怀念',
+    emotion: 'Nostalgic',
   },
 ]
 
 const familyMessages = [
   {
-    name: '女儿（李芳）',
-    message: '妈，我也记得城隍庙！下次我带您再去。❤️',
+    name: 'Daughter (Li Fang)',
+    message: 'Mom, I also remember the City God Temple! I\'ll take you there again next time. ❤️',
   },
   {
-    name: '孙女（小雨）',
-    message: '奶奶的饺子最好吃了！我要学会！',
+    name: 'Granddaughter (Xiao Yu)',
+    message: 'Grandma\'s dumplings are the best! I want to learn how to make them!',
   },
 ]
 
 export function MemoryMapPage({ onNavigate }: MemoryMapPageProps) {
-  const { t, language } = useLanguage()
+  const { t } = useLanguage()
   const [expandedIdx, setExpandedIdx] = useState<number | null>(null)
   const [sharedIdx, setSharedIdx] = useState<number | null>(null)
 
@@ -118,7 +118,7 @@ export function MemoryMapPage({ onNavigate }: MemoryMapPageProps) {
                   {expandedIdx === idx && (
                     <div className="mt-4 ml-20 p-4 bg-gray-50 rounded-lg">
                       <p className="text-lg text-gray-700">
-                        {language === 'zh' ? '完整记忆：' : 'Full Memory: '}{memory.summary}
+                        Full Memory: {memory.summary}
                       </p>
                     </div>
                   )}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { ArrowLeft, Mic } from 'lucide-react'
 
@@ -9,33 +9,33 @@ interface ChatPageProps {
 const presetDialogues = [
   {
     role: 'ai',
-    text: '王奶奶，今天感觉怎么样？昨天您说想起了小时候在上海的事，要不要继续聊聊？',
-    en: 'Grandma Wang, how are you feeling today? You mentioned yesterday about your childhood in Shanghai, would you like to continue?'
+    text: 'Hello Grandma Wang, how are you feeling today? You mentioned yesterday about your childhood memories in Shanghai. Would you like to continue talking about that?',
+    en: 'Hello Grandma Wang, how are you feeling today? You mentioned yesterday about your childhood memories in Shanghai. Would you like to continue talking about that?'
   },
   {
     role: 'user',
-    text: '好啊，我想起我妈妈以前带我去城隍庙...',
+    text: 'Sure, I remember my mother taking me to the City God Temple...',
     en: 'Sure, I remember my mother taking me to the City God Temple...'
   },
   {
     role: 'ai',
-    text: '城隍庙啊！那里一定很热闹吧。您妈妈最喜欢带您吃什么？',
-    en: 'The City God Temple! It must have been very lively. What did your mother like to take you to eat?'
+    text: 'The City God Temple! It must have been very lively. What did your mother like to take you to eat there?',
+    en: 'The City God Temple! It must have been very lively. What did your mother like to take you to eat there?'
   },
   {
     role: 'user',
-    text: '她最喜欢买南翔小笼包给我吃',
+    text: 'She loved buying me Nanxiang xiaolongbao (soup dumplings)',
     en: 'She loved buying me Nanxiang xiaolongbao (soup dumplings)'
   },
   {
     role: 'ai',
-    text: '这段记忆真美好。我已经帮您记录到家庭记忆地图里了 🌳 您的家人也能看到这个故事哦。',
+    text: 'What a beautiful memory. I\'ve recorded this to your family memory map 🌳 Your family can see this story too.',
     en: 'What a beautiful memory. I\'ve recorded this to your family memory map 🌳 Your family can see this story too.'
   },
 ]
 
 export function ChatPage({ onNavigate }: ChatPageProps) {
-  const { t, language } = useLanguage()
+  const { t } = useLanguage()
   const [dialogues, setDialogues] = useState<typeof presetDialogues>([presetDialogues[0]])
   const [isListening, setIsListening] = useState(false)
   const [chatTime, setChatTime] = useState(23)
@@ -115,7 +115,7 @@ export function ChatPage({ onNavigate }: ChatPageProps) {
                   : 'bg-gray-100 text-text rounded-bl-none'
               }`}
             >
-              {language === 'zh' ? dialogue.text : dialogue.en}
+              {dialogue.en}
             </div>
           </div>
         ))}

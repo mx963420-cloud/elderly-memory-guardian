@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { Menu, X } from 'lucide-react'
 
@@ -8,7 +8,7 @@ interface NavbarProps {
 }
 
 export function Navbar({ currentPage, onNavigate }: NavbarProps) {
-  const { language, setLanguage, t } = useLanguage()
+  const { t } = useLanguage()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const pages = [
@@ -53,12 +53,6 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
           {/* Right side controls */}
           <div className="hidden md:flex items-center space-x-4">
             <button
-              onClick={() => setLanguage(language === 'zh' ? 'en' : 'zh')}
-              className="px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition text-lg font-medium"
-            >
-              {language === 'zh' ? 'EN' : '中文'}
-            </button>
-            <button
               onClick={() => onNavigate('chat')}
               className="px-6 py-3 bg-primary text-white rounded-full font-bold text-lg hover:bg-opacity-90 transition animate-pulse"
             >
@@ -69,10 +63,10 @@ export function Navbar({ currentPage, onNavigate }: NavbarProps) {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-4">
             <button
-              onClick={() => setLanguage(language === 'zh' ? 'en' : 'zh')}
-              className="px-3 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition text-sm font-medium"
+              onClick={() => onNavigate('chat')}
+              className="px-4 py-2 bg-primary text-white rounded-lg font-bold text-sm"
             >
-              {language === 'zh' ? 'EN' : '中文'}
+              {t('nav.start')}
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

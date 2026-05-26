@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { ArrowLeft, ChevronDown, ChevronUp } from 'lucide-react'
 
@@ -7,7 +7,7 @@ interface PricingPageProps {
 }
 
 export function PricingPage({ onNavigate }: PricingPageProps) {
-  const { t, language } = useLanguage()
+  const { t } = useLanguage()
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
   const faqs = [
@@ -48,19 +48,19 @@ export function PricingPage({ onNavigate }: PricingPageProps) {
             <ul className="space-y-4 mb-8">
               <li className="text-lg text-text flex items-start">
                 <span className="text-primary mr-3">✓</span>
-                <span>{language === 'zh' ? 'AI 语音陪伴' : 'AI Voice Companion'}</span>
+                <span>AI Voice Companion</span>
               </li>
               <li className="text-lg text-text flex items-start">
                 <span className="text-primary mr-3">✓</span>
-                <span>{language === 'zh' ? '记忆记录（20段/月）' : 'Memory Records (20/month)'}</span>
+                <span>Memory Records (20/month)</span>
               </li>
               <li className="text-lg text-text flex items-start">
                 <span className="text-primary mr-3">✓</span>
-                <span>{language === 'zh' ? '健康提醒' : 'Health Reminders'}</span>
+                <span>Health Reminders</span>
               </li>
               <li className="text-lg text-text flex items-start">
                 <span className="text-primary mr-3">✓</span>
-                <span>{language === 'zh' ? '基础情绪报告' : 'Basic Emotion Report'}</span>
+                <span>Basic Emotion Report</span>
               </li>
             </ul>
             <button className="w-full px-6 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:bg-opacity-90 transition">
@@ -78,23 +78,23 @@ export function PricingPage({ onNavigate }: PricingPageProps) {
             <ul className="space-y-4 mb-8">
               <li className="text-lg text-text flex items-start">
                 <span className="text-primary mr-3">✓</span>
-                <span>{language === 'zh' ? '全部个人版功能' : 'All Personal Features'}</span>
+                <span>All Personal Features</span>
               </li>
               <li className="text-lg text-text flex items-start">
                 <span className="text-primary mr-3">✓</span>
-                <span>{language === 'zh' ? '无限记忆记录' : 'Unlimited Memory Records'}</span>
+                <span>Unlimited Memory Records</span>
               </li>
               <li className="text-lg text-text flex items-start">
                 <span className="text-primary mr-3">✓</span>
-                <span>{language === 'zh' ? '家人共享 & 留言' : 'Family Sharing & Messages'}</span>
+                <span>Family Sharing & Messages</span>
               </li>
               <li className="text-lg text-text flex items-start">
                 <span className="text-primary mr-3">✓</span>
-                <span>{language === 'zh' ? '情绪趋势报告' : 'Emotion Trend Report'}</span>
+                <span>Emotion Trend Report</span>
               </li>
               <li className="text-lg text-text flex items-start">
                 <span className="text-primary mr-3">✓</span>
-                <span>{language === 'zh' ? '紧急联系通知' : 'Emergency Notifications'}</span>
+                <span>Emergency Notifications</span>
               </li>
             </ul>
             <button className="w-full px-6 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:bg-opacity-90 transition">
@@ -109,23 +109,23 @@ export function PricingPage({ onNavigate }: PricingPageProps) {
             <ul className="space-y-4 mb-8">
               <li className="text-lg text-text flex items-start">
                 <span className="text-primary mr-3">✓</span>
-                <span>{language === 'zh' ? '全部家庭版功能' : 'All Family Features'}</span>
+                <span>All Family Features</span>
               </li>
               <li className="text-lg text-text flex items-start">
                 <span className="text-primary mr-3">✓</span>
-                <span>{language === 'zh' ? '多用户管理' : 'Multi-user Management'}</span>
+                <span>Multi-user Management</span>
               </li>
               <li className="text-lg text-text flex items-start">
                 <span className="text-primary mr-3">✓</span>
-                <span>{language === 'zh' ? '数据仪表盘' : 'Data Dashboard'}</span>
+                <span>Data Dashboard</span>
               </li>
               <li className="text-lg text-text flex items-start">
                 <span className="text-primary mr-3">✓</span>
-                <span>{language === 'zh' ? '情绪预警系统' : 'Emotion Alert System'}</span>
+                <span>Emotion Alert System</span>
               </li>
               <li className="text-lg text-text flex items-start">
                 <span className="text-primary mr-3">✓</span>
-                <span>{language === 'zh' ? '政府补贴对接' : 'Government Subsidy Integration'}</span>
+                <span>Government Subsidy Integration</span>
               </li>
             </ul>
             <button className="w-full px-6 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:bg-opacity-90 transition">

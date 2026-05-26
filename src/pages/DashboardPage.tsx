@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useLanguage } from '../context/LanguageContext'
-import { ArrowLeft, TrendingUp } from 'lucide-react'
+import { ArrowLeft } from 'lucide-react'
 
 interface DashboardPageProps {
   onNavigate: (page: string) => void
@@ -17,14 +17,14 @@ const emotionData = [
 ]
 
 const elderlyList = [
-  { name: '王秀兰', age: 78, emotion: '😊 开心', chatTime: '23min', status: '正常' },
-  { name: '李建国', age: 82, emotion: '😐 平静', chatTime: '15min', status: '正常' },
-  { name: '张美华', age: 75, emotion: '😢 低落', chatTime: '8min', status: '⚠️ 需关注' },
-  { name: '陈大明', age: 80, emotion: '😊 开心', chatTime: '28min', status: '正常' },
+  { name: 'Wang Xiulan', age: 78, emotion: '😊 Happy', chatTime: '23min', status: 'Normal' },
+  { name: 'Li Jianguo', age: 82, emotion: '😐 Calm', chatTime: '15min', status: 'Normal' },
+  { name: 'Zhang Meihua', age: 75, emotion: '😢 Low', chatTime: '8min', status: '⚠️ Needs Attention' },
+  { name: 'Chen Daming', age: 80, emotion: '😊 Happy', chatTime: '28min', status: 'Normal' },
 ]
 
 export function DashboardPage({ onNavigate }: DashboardPageProps) {
-  const { t, language } = useLanguage()
+  const { t } = useLanguage()
   const [activeTab, setActiveTab] = useState<'family' | 'institution'>('family')
   const [expandedWarning, setExpandedWarning] = useState(false)
 
@@ -100,11 +100,11 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-lg">
               <p className="text-gray-600 text-lg mb-2">{t('dashboard.emotion_status')}</p>
-              <p className="text-4xl font-bold text-green-500">😊 {language === 'zh' ? '开心' : 'Happy'}</p>
+              <p className="text-4xl font-bold text-green-500">😊 Happy</p>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-lg">
               <p className="text-gray-600 text-lg mb-2">{t('dashboard.new_memory')}</p>
-              <p className="text-4xl font-bold text-secondary">1 {language === 'zh' ? '段' : ''}</p>
+              <p className="text-4xl font-bold text-secondary">1</p>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-lg">
               <p className="text-gray-600 text-lg mb-2">{t('dashboard.medicine')}</p>
@@ -201,9 +201,7 @@ export function DashboardPage({ onNavigate }: DashboardPageProps) {
           {expandedWarning && (
             <div className="bg-red-50 rounded-2xl p-6 border-2 border-red-200">
               <p className="text-lg text-red-800">
-                {language === 'zh'
-                  ? '张美华今日多次提到"想老伴"，建议安排社工探访'
-                  : 'Zhang Meihua mentioned "missing her husband" multiple times today. Recommend social worker visit.'}
+                Zhang Meihua mentioned "missing her husband" multiple times today. Recommend social worker visit.
               </p>
             </div>
           )}

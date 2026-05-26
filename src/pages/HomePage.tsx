@@ -1,4 +1,3 @@
-import React from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { MessageCircle, MapPin, Heart } from 'lucide-react'
 
